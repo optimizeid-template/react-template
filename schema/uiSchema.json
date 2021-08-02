@@ -1,0 +1,18 @@
+{
+  "cover": {
+    "ui:options": { "column": 2 },
+    "mobile": { "ui:options": { "aspect": 0.75 } },
+    "desktop": { "ui:options": { "aspect": 2.4 } }
+  },
+  "groom": {
+    "photo": { "ui:options": { "aspect": 1 } },
+    "social": { "ui:options": { "column": 3 } }
+  },
+  "bride": {
+    "photo": { "ui:options": { "aspect": 1 } },
+    "social": { "ui:options": { "column": 3 } }
+  },
+  "event": { "items": { "time": { "ui:options": { "column": 2 } } } },
+  "gallery": { "ui:options": { "column": 4 } },
+  "amplop": { "items": { "ui:options": { "column": 3 } } }
+}

@@ -1,0 +1,175 @@
+{
+  "type": "object",
+  "properties": {
+    "date": { "title": "Wedding Date", "type": "string", "format": "date" },
+    "cover": {
+      "type": "object",
+      "title": "Cover",
+      "properties": {
+        "desktop": {
+          "type": "string",
+          "title": "Desktop",
+          "format": "imageUpload"
+        },
+        "mobile": {
+          "type": "string",
+          "title": "Mobile",
+          "format": "imageUpload"
+        }
+      }
+    },
+    "bride": {
+      "type": "object",
+      "title": "Bride",
+      "required": ["name", "photo"],
+      "properties": {
+        "photo": {
+          "type": "string",
+          "title": "Photo",
+          "format": "imageUpload"
+        },
+        "name": { "type": "string", "title": "Name" },
+        "shortName": { "type": "string", "title": "Short Name" },
+        "parent": {
+          "type": "string",
+          "title": "Parent"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "format": "textarea"
+        },
+        "social": {
+          "title": "Social Media",
+          "type": "object",
+          "properties": {
+            "instagram": { "title": "Instagram URL", "type": "string" },
+            "twitter": { "title": "Twitter URL", "type": "string" },
+            "facebook": { "title": "Facebook URL", "type": "string" }
+          }
+        }
+      }
+    },
+    "groom": {
+      "type": "object",
+      "title": "Groom",
+      "required": ["name", "photo"],
+      "properties": {
+        "photo": {
+          "type": "string",
+          "title": "Photo",
+          "format": "imageUpload"
+        },
+        "name": { "type": "string", "title": "Name" },
+        "shortName": { "type": "string", "title": "Short Name" },
+        "parent": {
+          "type": "string",
+          "title": "Parent"
+        },
+        "description": {
+          "type": "string",
+          "title": "Description",
+          "format": "textarea"
+        },
+        "social": {
+          "title": "Social Media",
+          "type": "object",
+          "properties": {
+            "instagram": { "title": "Instagram URL", "type": "string" },
+            "twitter": { "title": "Twitter URL", "type": "string" },
+            "facebook": { "title": "Facebook URL", "type": "string" }
+          }
+        }
+      }
+    },
+    "event": {
+      "type": "array",
+      "default": [],
+      "title": "Events",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "title": "Name" },
+          "date": { "type": "string", "title": "Date", "format": "date" },
+          "time": {
+            "type": "object",
+            "title": "Time",
+            "properties": {
+              "start": { "type": "string", "title": "Start", "format": "time" },
+              "end": { "type": "string", "title": "End", "format": "time" }
+            }
+          },
+          "location": {
+            "type": "object",
+            "title": "Location",
+            "properties": {
+              "name": { "type": "string", "title": "Name" },
+              "address": {
+                "type": "string",
+                "title": "Address",
+                "format": "textarea"
+              },
+              "coordinate": {
+                "type": "string",
+                "title": "Coordinate",
+                "format": "coordinate"
+              }
+            }
+          }
+        }
+      }
+    },
+    "gallery": {
+      "type": "array",
+      "default": [],
+      "title": "Gallery",
+      "items": { "type": "string", "title": "Image", "format": "imageUpload" }
+    },
+    "amplop": {
+      "type": "array",
+      "default": [],
+      "title": "Amplop",
+      "items": {
+        "type": "object",
+        "properties": {
+          "bankAccount": {
+            "title": "Bank",
+            "type": "string",
+            "enum": ["bca", "jenius", "mandiri"],
+            "enumNames": ["BCA", "Jenius", "Mandiri"]
+          },
+          "accountNumber": { "title": "Number", "type": "string" },
+          "accountName": { "title": "Name", "type": "string" }
+        }
+      }
+    },
+    "story": {
+      "type": "array",
+      "default": [],
+      "title": "Stories",
+      "items": {
+        "type": "object",
+        "properties": {
+          "image": {
+            "title": "Image",
+            "type": "string",
+            "format": "imageUpload"
+          },
+          "time": { "title": "Time", "type": "string" },
+          "title": { "title": "Title", "type": "string" },
+          "description": {
+            "title": "Description",
+            "type": "string",
+            "format": "textarea"
+          }
+        }
+      }
+    },
+    "video": {
+      "type": "array",
+      "default": [],
+      "title": "Video (Youtube)",
+      "items": { "title": "Youtube link", "type": "string" }
+    }
+  }
+}
