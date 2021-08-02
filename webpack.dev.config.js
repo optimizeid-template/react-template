@@ -14,9 +14,11 @@ const devConfig = merge(defaultConfig, {
     },
   },
   devServer: {
+    open: true,
     contentBase: path.join(__dirname, 'html/'),
     port: 3200,
     publicPath: 'http://localhost:3200/',
+    historyApiFallback: true,
     hotOnly: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
