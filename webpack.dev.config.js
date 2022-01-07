@@ -5,8 +5,15 @@ const defaultConfig = require('./webpack.config');
 
 const devConfig = merge(defaultConfig, {
   mode: 'development',
-  output: {
-    filename: "template.js",
+  entry: {
+    template: {
+      import: ['@babel/polyfill', './src/index.js'],
+      filename: 'template.js',
+    },
+    mock: {
+      import: './mock.js',
+      filename: 'mock.js',
+    },
   },
   resolve: {
     alias: {
@@ -15,11 +22,10 @@ const devConfig = merge(defaultConfig, {
   },
   devServer: {
     open: true,
-    contentBase: path.join(__dirname, 'html/'),
+    static: path.join(__dirname, 'html/'),
     port: 3200,
-    publicPath: 'http://localhost:3200/',
     historyApiFallback: true,
-    hotOnly: true,
+    hot: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',

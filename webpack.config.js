@@ -1,5 +1,4 @@
 module.exports = {
-  entry: ['@babel/polyfill', './src/index.js'],
   module: {
     rules: [
       {
@@ -22,8 +21,8 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
-          }
-        ]
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,

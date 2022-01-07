@@ -1,0 +1,120 @@
+{
+  "pageType": "invitation",
+  "cover": {
+    "desktop": "https://ik.imagekit.io/mnovalbs/desktop_cover_hPsz3wz8W.png",
+    "mobile": "https://ik.imagekit.io/mnovalbs/mobile_cover_70FipKanY.png"
+  },
+  "coverStyle": {
+    "desktop": {
+      "blur": 1,
+      "blackAlpha": 7
+    },
+    "mobile": {
+      "blur": 1,
+      "blackAlpha": 7
+    }
+  },
+  "bride": {
+    "social": {
+      "instagram": "https://www.instagram.com/",
+      "twitter": "https://twitter.com",
+      "facebook": "https://facebook.com"
+    },
+    "photo": "https://ik.imagekit.io/mnovalbs/bride_-kXBqnn0F.png",
+    "name": "Amal Ward",
+    "shortName": "Amal",
+    "parent": "Bpk Fred Brown & Ibu Shirley Oubre",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies posuere magna. Nullam vitae porttitor ligula. Cras facilisis velit id erat posuere luctus."
+  },
+  "groom": {
+    "social": {
+      "instagram": "https://www.instagram.com",
+      "twitter": "https://twitter.com",
+      "facebook": "https://facebook.com"
+    },
+    "photo": "https://ik.imagekit.io/mnovalbs/groom_kbEoFUR_5.png",
+    "name": "Eric Rolling",
+    "shortName": "Eric",
+    "parent": "Bpk Christian Washington & Ibu Rhonda Crawford",
+    "description": "Etiam pretium dui luctus, viverra massa eu, pulvinar lacus. Fusce accumsan gravida placerat. Ut dictum, felis vel imperdiet tempus, mi sem tincidunt nunc, eu ornare libero sapien ut tortor."
+  },
+  "event": [
+    {
+      "time": {
+        "start": "09:00",
+        "end": "12:00"
+      },
+      "location": {
+        "showLocation": true,
+        "showDirection": true,
+        "name": "The Apurva Kempinski Bali",
+        "coordinate": "-8.8285518,115.215578",
+        "address": "Jl. Raya Nusa Dua Selatan, Benoa, Kec. Kuta Sel., Kabupaten Badung, Bali"
+      },
+      "liveStream": {
+        "show": true,
+        "url": ""
+      },
+      "name": "Akad Nikah",
+      "date": "2022-01-22"
+    }
+  ],
+  "protocol": {
+    "enabled": true,
+    "text": "Mengikuti anjuran protokol kesehatan Covid 19\nAcara pernikahan hanya akan dihadiri oleh pihak keluarga kedua mempelai.\nUntuk itu, kami mohon doa restu supaya acara berjalan dengan lancar.\n\nWassalamu'alaikum Warahmatullahi Wb."
+  },
+  "gallery": [
+    "https://ik.imagekit.io/mnovalbs/gallery-1_N4f3vHFWt.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-2_h2O5fIOQX.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-3_Esaow4FUv.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-4_wujiqMvNGT2.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-5_ypCa0cTms.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-6_HwLSB_VryaJ.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-8_WliIonTY5.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-9_feOrkeM3m.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-11_EeqM3n2j7.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-12__nsNAtBQc.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-13_BuFd4NFQi7e.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-15_D2Z2zsUY7.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-14_wd92OMfzD.png",
+    "https://ik.imagekit.io/mnovalbs/gallery-16_65jj_BCMN.png"
+  ],
+  "messages": [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut arcu vel odio efficitur sollicitudin ut nec urna. Sed interdum vel eros et commodo.",
+    "Suspendisse ultrices bibendum enim, vel egestas enim tristique in. Nunc scelerisque, dolor sed imperdiet efficitur, ipsum tellus dignissim odio, consequat luctus nulla dolor nec nibh. Nullam in mi placerat, pretium enim quis, pellentesque ex."
+  ],
+  "amplop": [
+    {
+      "bankAccount": "mandiri",
+      "accountNumber": "1234567891011",
+      "accountName": "John Doe"
+    },
+    {
+      "bankAccount": "bni",
+      "accountNumber": "1234567891011",
+      "accountName": "John Doe"
+    },
+    {
+      "bankAccount": "bri",
+      "accountNumber": "1234567891011",
+      "accountName": "John Doe"
+    }
+  ],
+  "story": [
+    {
+      "image": "https://ik.imagekit.io/mnovalbs/story-1_fuQh0OXEg.png",
+      "time": "2018",
+      "title": "Pandangan Pertama",
+      "description": "Cras mauris ex, auctor ut nunc imperdiet, porta auctor velit. Integer in hendrerit metus, non tempor mauris. \nMauris nec diam sem. Aenean euismod iaculis augue, non finibus lorem lacinia eu. Suspendisse faucibus mi elementum justo consectetur, vel dapibus urna lobortis. Nunc varius venenatis urna, nec tempus risus mollis ac. Sed vitae pharetra erat, eget bibendum turpis. Ut pretium, nisl vel porttitor iaculis, ligula nunc venenatis erat, id euismod sapien nulla ac sapien. Vestibulum condimentum luctus hendrerit. Curabitur aliquet tristique ligula, a varius nibh bibendum eget."
+    },
+    {
+      "image": "https://ik.imagekit.io/mnovalbs/story-2_iQUATMum6.png",
+      "time": "2019 Januari 11",
+      "title": "Tanggal Spesial",
+      "description": "Cras mauris ex, auctor ut nunc imperdiet, porta auctor velit. Integer in hendrerit metus, non tempor mauris. Mauris nec diam sem. Aenean euismod iaculis augue, non finibus lorem lacinia eu. Suspendisse faucibus mi elementum justo consectetur, vel dapibus urna lobortis. Nunc varius venenatis urna, nec tempus risus mollis ac. Sed vitae pharetra erat, eget bibendum turpis. Ut pretium, nisl vel porttitor iaculis, ligula nunc venenatis erat, id euismod sapien nulla ac sapien. Vestibulum condimentum luctus hendrerit. Curabitur aliquet tristique ligula, a varius nibh bibendum eget."
+    }
+  ],
+  "video": ["https://www.youtube.com/watch?v=9tCFRiUFTwk"],
+  "date": "2022-01-22",
+  "sound": "https://storage.googleapis.com/filos-templates/sound/bensound-love.mp3"
+}
