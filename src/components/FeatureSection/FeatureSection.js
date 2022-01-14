@@ -1,24 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import React from 'react';
-
-const Wrapper = styled.div`
-  margin: 24px 0;
-  padding: 66px;
-  background: rgba(249, 249, 249, 1);
-  border-radius: 24px;
-
-  ${(props) =>
-    props.backgroundGradient &&
-    css`
-      background: linear-gradient(
-        258.37deg,
-        #ffe8bf -18.03%,
-        #cfdfff 110.11%,
-        #f9f9f9 110.11%
-      );
-    `}
-`;
+import SectionBox from '../SectionBox/SectionBox';
 
 const Flex = styled.div`
   display: flex;
@@ -79,12 +62,12 @@ const Feature = styled.div`
 `;
 
 function FeatureSection({
-  backgroundGradient = false,
+  backgroundGradient,
   features = [],
   reverse = false,
 }) {
   return (
-    <Wrapper backgroundGradient={backgroundGradient}>
+    <SectionBox backgroundGradient={backgroundGradient}>
       <Flex reverse={reverse}>
         <FlexItem>
           <ImageWrapper reverse={reverse}>
@@ -102,7 +85,7 @@ function FeatureSection({
           </Grid>
         </FlexItem>
       </Flex>
-    </Wrapper>
+    </SectionBox>
   );
 }
 
