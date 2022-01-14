@@ -1,4 +1,5 @@
 import React from 'react';
+import AcademyList from '../components/AcademyList';
 import DataPlaceholder from '../components/DataPlaceholder';
 import FeatureSection from '../components/FeatureSection/FeatureSection';
 import HomeCover from '../components/HomeCover/HomeCover';
@@ -34,6 +35,8 @@ function Home() {
         <DataPlaceholder />
         <DataPlaceholder />
       </SimpleList>
+
+      <AcademyList />
     </>
   );
 }
