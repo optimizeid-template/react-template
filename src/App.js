@@ -2,8 +2,8 @@ import './App.scss';
 import React, { lazy, Suspense } from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Layout from './layout';
 import Loading from './components/Loading';
+import Layout from './components/Layout';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
