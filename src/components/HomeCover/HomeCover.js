@@ -1,9 +1,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import Container from '../Container/Container';
 
-const Wrapper = styled.div`
-  max-width: 1240px;
-  margin: 0 auto;
+const Wrapper = styled(Container)`
   position: relative;
 `;
 
@@ -20,14 +19,9 @@ const ImageBox = styled.div`
   margin-top: 10%;
 `;
 
-const PageContainer = styled.div`
-  position: absolute;
-  width: calc(100% - 120px);
-
-  left: 0;
-  right: 0;
-  top: 15%;
-  margin: 0 auto;
+const PageContainer = styled(Container)`
+  position: relative;
+  margin-top: calc(-60% + 10%);
 `;
 
 const Title = styled.h3`
@@ -51,16 +45,15 @@ const Caption = styled.div`
 
 function HomeCover() {
   return (
-    <Wrapper>
-      <BackgroundBox>
-        <PageContainer>
-          <Title>Write beautifully on iPhone, iPad, and Mac</Title>
-          <Caption>
-            Dog is a bautiful, flexible app for crafting notes and prose
-          </Caption>
-          <ImageBox />
-        </PageContainer>
-      </BackgroundBox>
+    <Wrapper xl>
+      <BackgroundBox />
+      <PageContainer>
+        <Title>Write beautifully on iPhone, iPad, and Mac</Title>
+        <Caption>
+          Dog is a bautiful, flexible app for crafting notes and prose
+        </Caption>
+        <ImageBox />
+      </PageContainer>
     </Wrapper>
   );
 }
