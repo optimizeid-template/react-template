@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import React from 'react';
-import Container from '../Container/Container';
 
 const Wrapper = styled.div`
   background: #f9f9f9;
@@ -49,26 +48,24 @@ const LogoPlaceholder = styled.div`
 
 function LogoList() {
   return (
-    <Container xl>
-      <Wrapper>
-        <Title>This is the long title for explaining what happen here</Title>
-        <Caption>
-          Explanation sentences for describing the condition around here. Maybe
-          it can be 2 sentences, no more.{' '}
-        </Caption>
+    <Wrapper>
+      <Title>This is the long title for explaining what happen here</Title>
+      <Caption>
+        Explanation sentences for describing the condition around here. Maybe it
+        can be 2 sentences, no more.{' '}
+      </Caption>
 
-        <Grid>
-          <LogoPlaceholder>Logo</LogoPlaceholder>
-          <LogoPlaceholder>Logo</LogoPlaceholder>
-          <LogoPlaceholder>Logo</LogoPlaceholder>
-          <LogoPlaceholder>Logo</LogoPlaceholder>
-          <LogoPlaceholder>Logo</LogoPlaceholder>
-          <LogoPlaceholder>Logo</LogoPlaceholder>
-          <LogoPlaceholder>Logo</LogoPlaceholder>
-          <LogoPlaceholder>Logo</LogoPlaceholder>
-        </Grid>
-      </Wrapper>
-    </Container>
+      <Grid>
+        <LogoPlaceholder>Logo</LogoPlaceholder>
+        <LogoPlaceholder>Logo</LogoPlaceholder>
+        <LogoPlaceholder>Logo</LogoPlaceholder>
+        <LogoPlaceholder>Logo</LogoPlaceholder>
+        <LogoPlaceholder>Logo</LogoPlaceholder>
+        <LogoPlaceholder>Logo</LogoPlaceholder>
+        <LogoPlaceholder>Logo</LogoPlaceholder>
+        <LogoPlaceholder>Logo</LogoPlaceholder>
+      </Grid>
+    </Wrapper>
   );
 }
 

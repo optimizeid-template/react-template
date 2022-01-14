@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from '../Container';
 import Navigation from '../Navigation';
 
 function Layout({ children }) {
@@ -6,7 +7,7 @@ function Layout({ children }) {
     <div>
       <Navigation />
 
-      <div>{children}</div>
+      <Container xl>{children}</Container>
     </div>
   );
 }

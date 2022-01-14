@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 import Container from '../Container/Container';
 
-const Wrapper = styled(Container)`
+const Wrapper = styled.div`
   position: relative;
 `;
 
