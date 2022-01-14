@@ -3,6 +3,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Container from '../Container';
 
+const StyledNav = styled.nav`
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #fff;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -48,7 +55,7 @@ const menus = [
 
 function Navigation() {
   return (
-    <nav>
+    <StyledNav>
       <Container>
         <Wrapper>
           <div>
@@ -65,7 +72,7 @@ function Navigation() {
           </div>
         </Wrapper>
       </Container>
-    </nav>
+    </StyledNav>
   );
 }
 
