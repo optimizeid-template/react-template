@@ -20,19 +20,35 @@ const FooterBottom = styled.div`
     margin: 0;
     padding: 0;
 
+    @media screen and (max-width: 768px) {
+      margin-top: 20px;
+    }
+
     li {
       display: inline-block;
       margin-left: 56px;
+
+      @media screen and (max-width: 768px) {
+        margin: 0 15px;
+      }
     }
+  }
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
 function Footer() {
+  const { companyName } = window.templateConfig;
+
   return (
     <Wrapper>
       <Container>
         <FooterBottom>
-          <div>(c) Company Name, All Right Reserve</div>
+          <div>(c) {companyName}, All Right Reserve</div>
           <div>
             <ul>
               <li>Privacy Policy</li>

@@ -8,9 +8,42 @@ import SimpleList from '../components/SimpleList';
 import features from '../constant/features';
 
 function Home() {
+  const { sections } = window.templateConfig;
+
   return (
     <>
       <HomeCover />
+
+      {sections.map((section, index) => {
+        const { sectionType } = section;
+
+        if (sectionType === 'feature-left') {
+          const { features, image, background } = section;
+          return (
+            <FeatureSection
+              key={index}
+              image={image}
+              features={features}
+              backgroundGradient={parseInt(background, 10)}
+            />
+          );
+        }
+
+        if (sectionType === 'feature-right') {
+          const { features, image, background } = section;
+          return (
+            <FeatureSection
+              key={index}
+              image={image}
+              features={features}
+              backgroundGradient={parseInt(background, 10)}
+              reverse
+            />
+          );
+        }
+
+        return null;
+      })}
 
       <SimpleList>
         <LogoPlaceholder>Logo</LogoPlaceholder>
@@ -22,12 +55,6 @@ function Home() {
         <LogoPlaceholder>Logo</LogoPlaceholder>
         <LogoPlaceholder>Logo</LogoPlaceholder>
       </SimpleList>
-
-      <FeatureSection features={features} backgroundGradient={2} />
-
-      <FeatureSection features={features.slice(0, 2)} reverse />
-
-      <FeatureSection features={features} />
 
       <SimpleList backgroundGradient={3}>
         <DataPlaceholder />

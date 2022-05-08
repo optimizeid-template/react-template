@@ -1,175 +1,126 @@
 {
   "type": "object",
+  "required": ["title", "companyName"],
   "properties": {
-    "date": { "title": "Wedding Date", "type": "string", "format": "date" },
-    "cover": {
-      "type": "object",
-      "title": "Cover",
-      "properties": {
-        "desktop": {
-          "type": "string",
-          "title": "Desktop",
-          "format": "imageUpload"
-        },
-        "mobile": {
-          "type": "string",
-          "title": "Mobile",
-          "format": "imageUpload"
-        }
-      }
+    "title": {
+      "type": "string",
+      "title": "Website Title"
     },
-    "bride": {
-      "type": "object",
-      "title": "Bride",
-      "required": ["name", "photo"],
-      "properties": {
-        "photo": {
-          "type": "string",
-          "title": "Photo",
-          "format": "imageUpload"
-        },
-        "name": { "type": "string", "title": "Name" },
-        "shortName": { "type": "string", "title": "Short Name" },
-        "parent": {
-          "type": "string",
-          "title": "Parent"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description",
-          "format": "textarea"
-        },
-        "social": {
-          "title": "Social Media",
-          "type": "object",
-          "properties": {
-            "instagram": { "title": "Instagram URL", "type": "string" },
-            "twitter": { "title": "Twitter URL", "type": "string" },
-            "facebook": { "title": "Facebook URL", "type": "string" }
-          }
-        }
-      }
+    "companyName": {
+      "type": "string",
+      "title": "Company Name"
     },
-    "groom": {
-      "type": "object",
-      "title": "Groom",
-      "required": ["name", "photo"],
-      "properties": {
-        "photo": {
-          "type": "string",
-          "title": "Photo",
-          "format": "imageUpload"
-        },
-        "name": { "type": "string", "title": "Name" },
-        "shortName": { "type": "string", "title": "Short Name" },
-        "parent": {
-          "type": "string",
-          "title": "Parent"
-        },
-        "description": {
-          "type": "string",
-          "title": "Description",
-          "format": "textarea"
-        },
-        "social": {
-          "title": "Social Media",
-          "type": "object",
-          "properties": {
-            "instagram": { "title": "Instagram URL", "type": "string" },
-            "twitter": { "title": "Twitter URL", "type": "string" },
-            "facebook": { "title": "Facebook URL", "type": "string" }
-          }
-        }
-      }
-    },
-    "event": {
+    "sections": {
       "type": "array",
-      "default": [],
-      "title": "Events",
+      "title": "Sections",
       "items": {
         "type": "object",
+        "required": ["sectionType"],
         "properties": {
-          "name": { "type": "string", "title": "Name" },
-          "date": { "type": "string", "title": "Date", "format": "date" },
-          "time": {
-            "type": "object",
-            "title": "Time",
-            "properties": {
-              "start": { "type": "string", "title": "Start", "format": "time" },
-              "end": { "type": "string", "title": "End", "format": "time" }
-            }
-          },
-          "location": {
-            "type": "object",
-            "title": "Location",
-            "properties": {
-              "name": { "type": "string", "title": "Name" },
-              "address": {
-                "type": "string",
-                "title": "Address",
-                "format": "textarea"
+          "sectionType": {
+            "type": "string",
+            "title": "Section Type",
+            "enum": ["feature-left", "feature-right"],
+            "enumNames": ["Feature Left", "Feature Right"]
+          }
+        },
+        "dependencies": {
+          "sectionType": {
+            "oneOf": [
+              {
+                "title": "Section",
+                "titleFormat": "accordion",
+                "required": ["background"],
+                "properties": {
+                  "sectionType": {
+                    "enum": ["feature-left"]
+                  },
+                  "image": {
+                    "title": "Image",
+                    "type": "string",
+                    "format": "imageUpload"
+                  },
+                  "background": {
+                    "type": "string",
+                    "title": "Background Type",
+                    "default": "no-background",
+                    "enum": ["no-background", "1", "2", "3"],
+                    "enumNames": [
+                      "No Background",
+                      "Background-1",
+                      "Background-2",
+                      "Background-3"
+                    ]
+                  },
+                  "features": {
+                    "title": "Features",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["title", "description"],
+                      "properties": {
+                        "title": {
+                          "type": "string",
+                          "title": "Title"
+                        },
+                        "description": {
+                          "type": "string",
+                          "title": "Short Description",
+                          "format": "textarea"
+                        }
+                      }
+                    }
+                  }
+                }
               },
-              "coordinate": {
-                "type": "string",
-                "title": "Coordinate",
-                "format": "coordinate"
+              {
+                "required": ["background"],
+                "properties": {
+                  "sectionType": {
+                    "enum": ["feature-right"]
+                  },
+                  "image": {
+                    "title": "Image",
+                    "type": "string",
+                    "format": "imageUpload"
+                  },
+                  "background": {
+                    "type": "string",
+                    "title": "Background Type",
+                    "default": "no-background",
+                    "enum": ["no-background", "1", "2", "3"],
+                    "enumNames": [
+                      "No Background",
+                      "Background-1",
+                      "Background-2",
+                      "Background-3"
+                    ]
+                  },
+                  "features": {
+                    "title": "Features",
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "required": ["title", "description"],
+                      "properties": {
+                        "title": {
+                          "type": "string",
+                          "title": "Title"
+                        },
+                        "description": {
+                          "type": "string",
+                          "title": "Short Description",
+                          "format": "textarea"
+                        }
+                      }
+                    }
+                  }
+                }
               }
-            }
+            ]
           }
         }
       }
-    },
-    "gallery": {
-      "type": "array",
-      "default": [],
-      "title": "Gallery",
-      "items": { "type": "string", "title": "Image", "format": "imageUpload" }
-    },
-    "amplop": {
-      "type": "array",
-      "default": [],
-      "title": "Amplop",
-      "items": {
-        "type": "object",
-        "properties": {
-          "bankAccount": {
-            "title": "Bank",
-            "type": "string",
-            "enum": ["bca", "jenius", "mandiri"],
-            "enumNames": ["BCA", "Jenius", "Mandiri"]
-          },
-          "accountNumber": { "title": "Number", "type": "string" },
-          "accountName": { "title": "Name", "type": "string" }
-        }
-      }
-    },
-    "story": {
-      "type": "array",
-      "default": [],
-      "title": "Stories",
-      "items": {
-        "type": "object",
-        "properties": {
-          "image": {
-            "title": "Image",
-            "type": "string",
-            "format": "imageUpload"
-          },
-          "time": { "title": "Time", "type": "string" },
-          "title": { "title": "Title", "type": "string" },
-          "description": {
-            "title": "Description",
-            "type": "string",
-            "format": "textarea"
-          }
-        }
-      }
-    },
-    "video": {
-      "type": "array",
-      "default": [],
-      "title": "Video (Youtube)",
-      "items": { "title": "Youtube link", "type": "string" }
     }
   }
 }

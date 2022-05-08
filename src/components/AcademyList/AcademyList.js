@@ -15,8 +15,12 @@ const Title = styled.h4`
 const Grid = styled.div`
   display: grid;
   gap: 25px;
-  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-columns: auto auto auto;
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const PostImage = styled.div`
@@ -41,6 +45,10 @@ const PostDescription = styled.div`
   line-height: 19px;
   text-align: center;
   color: #737b7d;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 20px;
+  }
 `;
 
 function Post() {

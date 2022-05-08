@@ -33,6 +33,11 @@ const Title = styled.h3`
   max-width: 900px;
   margin: 0 auto;
   margin-bottom: 24px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+    line-height: 35px;
+  }
 `;
 
 const Caption = styled.div`

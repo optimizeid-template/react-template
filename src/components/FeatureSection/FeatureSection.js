@@ -12,6 +12,10 @@ const Flex = styled.div`
     css`
       flex-direction: row-reverse;
     `}
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
 `;
 
 const FlexItem = styled.div`
@@ -24,8 +28,15 @@ const FlexItem = styled.div`
 const ImagePlaceholder = styled.div`
   width: 100%;
   padding-bottom: 60%;
-  background: #f4f5f4;
+  background-image: url(${({ image }) => image});
   border-radius: 5px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: 24px;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -38,12 +49,20 @@ const ImageWrapper = styled.div`
       padding-left: 24px;
       padding-right: 0;
     `}
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const Grid = styled.div`
   display: grid;
   gap: 24px;
   grid-template-columns: auto auto;
+
+  @media screen and (max-width: 900px) {
+    display: block;
+  }
 `;
 
 const Feature = styled.div`
@@ -59,9 +78,16 @@ const Feature = styled.div`
     color: #737b7d;
     margin-bottom: 16px;
   }
+
+  @media screen and (max-width: 900px) {
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
 `;
 
 function FeatureSection({
+  image = '',
   backgroundGradient,
   features = [],
   reverse = false,
@@ -71,7 +97,7 @@ function FeatureSection({
       <Flex reverse={reverse}>
         <FlexItem>
           <ImageWrapper reverse={reverse}>
-            <ImagePlaceholder />
+            <ImagePlaceholder image={image} />
           </ImageWrapper>
         </FlexItem>
         <FlexItem>

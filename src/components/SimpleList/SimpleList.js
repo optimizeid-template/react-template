@@ -28,6 +28,10 @@ const Grid = styled.div`
   grid-template-columns: auto auto auto auto;
   max-width: 700px;
   margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: auto auto;
+  }
 `;
 
 function LogoList({ backgroundGradient, children }) {

@@ -22,7 +22,17 @@ const devConfig = merge(defaultConfig, {
   },
   devServer: {
     open: true,
-    static: path.join(__dirname, 'html/'),
+    allowedHosts: "all",
+    static: [
+      {
+        directory: path.join(__dirname, 'html/'),
+        publicPath: '/',
+      },
+      {
+        directory: path.join(__dirname, 'schema/'),
+        publicPath: '/_schema',
+      },
+    ],
     port: 3200,
     historyApiFallback: true,
     hot: true,
