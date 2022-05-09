@@ -15,11 +15,11 @@ const Caption = styled.div`
   color: #737b7d;
 `;
 
-function DataPlaceholder() {
+function DataPlaceholder({ data }) {
   return (
     <div>
-      <Percentage>100%</Percentage>
-      <Caption>Noun things</Caption>
+      <Percentage>{data.number}</Percentage>
+      <Caption>{data.name}</Caption>
     </div>
   );
 }

@@ -62,7 +62,8 @@ const StyledNav = styled.nav`
   position: sticky;
   top: 0;
   z-index: 2;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: saturate(180%) blur(5px);
 
   @media screen and (max-width: 768px) {
     padding: 10px 0;
@@ -79,34 +80,43 @@ const Wrapper = styled.div`
   }
 `;
 
+const { sections } = window.templateConfig;
+const mappedMenus = sections.map((section, index) => ({
+  name: section.menuName,
+  index,
+}));
+const filteredMenus = mappedMenus.filter((menu) => !!menu.name);
+
 const menus = [
   {
-    label: 'Features',
-    url: '#features',
+    label: 'Home',
+    url: '/',
   },
-  {
-    label: 'Community',
-    url: '#community',
-  },
-  {
-    label: 'Pricing',
-    url: '#pricing',
-  },
-  {
-    label: 'FAQ',
-    url: '#faq',
-  },
-  {
-    label: 'Blog',
-    url: '#blog',
-  },
-];
+].concat(
+  filteredMenus.map((menu) => ({
+    label: menu.name,
+    url: `#section-${menu.index}`,
+  }))
+);
 
 function MobileMenu() {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
     setShowMenu((prev) => !prev);
+  };
+
+  const menuClick = (url) => {
+    if (url.startsWith('#')) {
+      const element = document.querySelector(url);
+      window.scrollTo({ top: element.offsetTop - 80, behavior: 'smooth' });
+    } else {
+      document.querySelector('#template').scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+
+    toggleMenu();
   };
 
   return (
@@ -116,7 +126,7 @@ function MobileMenu() {
       </button>
       <ul>
         {menus.map((menu) => (
-          <li key={menu.label} onClick={toggleMenu}>
+          <li key={menu.label} onClick={() => menuClick(menu.url)}>
             <Link to={menu.url}>{menu.label}</Link>
           </li>
         ))}
@@ -126,10 +136,21 @@ function MobileMenu() {
 }
 
 function DesktopMenu() {
+  const menuClick = (url) => {
+    if (url.startsWith('#')) {
+      const element = document.querySelector(url);
+      window.scrollTo({ top: element.offsetTop - 90, behavior: 'smooth' });
+    } else {
+      document.querySelector('#template').scrollIntoView({
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <MenuDesktop>
       {menus.map((menu) => (
-        <li key={menu.label}>
+        <li key={menu.label} onClick={() => menuClick(menu.url)}>
           <Link to={menu.url}>{menu.label}</Link>
         </li>
       ))}

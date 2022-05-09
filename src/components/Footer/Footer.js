@@ -8,7 +8,8 @@ const Wrapper = styled.footer`
 
 const FooterBottom = styled.div`
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
 
   font-weight: 600;
   font-size: 14px;
@@ -49,13 +50,13 @@ function Footer() {
       <Container>
         <FooterBottom>
           <div>(c) {companyName}, All Right Reserve</div>
-          <div>
+          {/* <div>
             <ul>
               <li>Privacy Policy</li>
               <li>Term of Service</li>
               <li>Legal</li>
             </ul>
-          </div>
+          </div> */}
         </FooterBottom>
       </Container>
     </Wrapper>

@@ -34,14 +34,11 @@ const Grid = styled.div`
   }
 `;
 
-function LogoList({ backgroundGradient, children }) {
+function LogoList({ title, caption, backgroundGradient, children }) {
   return (
     <Wrapper backgroundGradient={backgroundGradient}>
-      <Title>This is the long title for explaining what happen here</Title>
-      <Caption>
-        Explanation sentences for describing the condition around here. Maybe it
-        can be 2 sentences, no more.{' '}
-      </Caption>
+      <Title>{title}</Title>
+      <Caption>{caption}</Caption>
 
       <Grid>{children}</Grid>
     </Wrapper>

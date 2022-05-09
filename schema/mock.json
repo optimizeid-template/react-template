@@ -1,41 +1,110 @@
 {
   "sections": [
     {
-      "background": "1",
-      "features": [
-        {
-          "title": "Feature Pertama",
-          "description": "Bear works on iPhone, iPad, and Mac, so you can write wherever inspiration strikes. Use todos to stay on task across every device."
-        }
-      ],
-      "sectionType": "feature-right",
-      "image": "https://ik.imagekit.io/mnovalbs/invesguru-thumbnail_Lm2S5eagv.png"
+      "banner": {
+        "background": "no-background",
+        "title": "MacBook Pro",
+        "caption": "The most powerful MacBook Pro ever is here. With the blazing-fast M1 Pro or M1 Max chip",
+        "image": "https://ik.imagekit.io/mnovalbs/macbookpro_-kmCEOVGY.png"
+      },
+      "sectionType": "banner"
     },
     {
-      "background": "no-background",
-      "features": [
-        {
-          "title": " Ready when you need it",
-          "description": "Bear works on iPhone, iPad, and Mac, so you can write wherever inspiration strikes. Use todos to stay on task across every device."
-        },
-        {
-          "title": "Organize easily",
-          "description": "Link notes to each other to build a body of work. Add hashtags to organize the way you think. Use Face/Touch ID to protect sensitive notes."
-        },
-        {
-          "title": "Write your way",
-          "description": "Bear works on iPhone, iPad, and Mac, so you can write wherever inspiration strikes. Use todos to stay on task across every device."
-        },
-        {
-          "title": "Gorgeous settings",
-          "description": "Packed with beautiful themes and typography and Dark Mode, Bear makes your writing look great before and after publishing."
-        }
-      ],
+      "dataSection": {
+        "background": "3",
+        "datas": [
+          {
+            "number": "13x",
+            "name": "faster graphics performance"
+          },
+          {
+            "number": "3.7x",
+            "name": "faster CPU performance"
+          },
+          {
+            "number": "21",
+            "name": "hours battery life"
+          },
+          {
+            "number": "11x",
+            "name": "faster machine learning"
+          }
+        ],
+        "title": "Performance",
+        "caption": "Supercharged for pros"
+      },
+      "sectionType": "data-list",
+      "menuName": "Performance"
+    },
+    {
+      "feature": {
+        "background": "no-background",
+        "features": [
+          {
+            "title": "Scary fast.",
+            "description": "Up to 10-core CPU - Up to 16-core GPU - Up to 32GB of unified memory - Up to 200GB/s memory bandwidth"
+          }
+        ],
+        "image": "https://ik.imagekit.io/mnovalbs/m1pro_YCh6jyBOa.png"
+      },
       "sectionType": "feature-left",
-      "content": "Isi konten nya",
-      "image": "https://ik.imagekit.io/mnovalbs/kuyang_AalAwoyI-.png"
+      "menuName": ""
+    },
+    {
+      "feature": {
+        "background": "no-background",
+        "features": [
+          {
+            "title": "Scary faster.",
+            "description": "10-core CPU - Up to 32-core GPU - Up to 64GB of unified memory - Up to 400GB/s memory bandwidth"
+          }
+        ],
+        "content": "Isi konten nya",
+        "image": "https://ik.imagekit.io/mnovalbs/m1max_bUKeSSesS.png"
+      },
+      "sectionType": "feature-left"
+    },
+    {
+      "logoSection": {
+        "background": "3",
+        "logos": [
+          "https://ik.imagekit.io/mnovalbs/iphone13_cbDRJgymp.png",
+          "https://ik.imagekit.io/mnovalbs/applewatchj_tU7x3Esz2.png",
+          "https://ik.imagekit.io/mnovalbs/applemacbookpro_eRqKGoFYE.png",
+          "https://ik.imagekit.io/mnovalbs/appleairpod_gaetCtMZa.png"
+        ],
+        "title": "Apple Products",
+        "caption": "Find the right product for you"
+      },
+      "sectionType": "logo-list",
+      "menuName": "Apple Products"
+    },
+    {
+      "cardSection": {
+        "cards": [
+          {
+            "image": "https://ik.imagekit.io/mnovalbs/trade_in__f7nl7wvwnvu6_large_Wm-vuA1nX.png",
+            "title": "Apple Trade In",
+            "description": "This is placeholder text for explaining to user about your company or your services. This is placeholder text for explaining to user about your company or your services."
+          },
+          {
+            "description": "This is placeholder text for explaining to user about your company or your services. This is placeholder text for explaining to user about your company or your services.",
+            "title": "Which Mac is right for you?",
+            "image": "https://ik.imagekit.io/mnovalbs/mac_compare__bler5cd0ltua_large_viEJ5SIgW.png",
+            "url": "https://optimize.id"
+          },
+          {
+            "image": "https://ik.imagekit.io/mnovalbs/accessories__3a8yv6f1xgyq_large_W3WlPCAv5.png",
+            "title": "Explore Mac accessories.",
+            "description": "This is placeholder text for explaining to user about your company or your services. This is placeholder text for explaining to user about your company or your services."
+          }
+        ],
+        "title": "More from Apple"
+      },
+      "sectionType": "card-list",
+      "menuName": ""
     }
   ],
-  "title": "My Website",
+  "title": "Apple",
   "companyName": "My Company Name"
 }

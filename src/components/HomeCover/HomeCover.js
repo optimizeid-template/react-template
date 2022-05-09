@@ -17,6 +17,11 @@ const ImageBox = styled.div`
   background: #f4f5f4;
   border-radius: 24px;
   margin-top: 10%;
+
+  background-image: url(${({ image }) => image});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const PageContainer = styled(Container)`
@@ -48,16 +53,14 @@ const Caption = styled.div`
   color: #737b7d;
 `;
 
-function HomeCover() {
+function HomeCover({ title, caption, image }) {
   return (
     <Wrapper xl>
       <BackgroundBox />
       <PageContainer>
-        <Title>Write beautifully on iPhone, iPad, and Mac</Title>
-        <Caption>
-          Dog is a bautiful, flexible app for crafting notes and prose
-        </Caption>
-        <ImageBox />
+        <Title>{title}</Title>
+        <Caption>{caption}</Caption>
+        <ImageBox image={image} />
       </PageContainer>
     </Wrapper>
   );

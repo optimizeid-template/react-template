@@ -7,6 +7,10 @@ const SectionBox = styled.div`
   background: #f9f9f9;
   border-radius: 24px;
 
+  @media screen and (max-width: 768px) {
+    padding: 30px;
+  }
+
   ${(props) =>
     props.backgroundGradient === 1 &&
     css`

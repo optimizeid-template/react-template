@@ -6,10 +6,13 @@ const LogoPlaceholder = styled.div`
   align-items: center;
   font-weight: 500;
   width: 100%;
-  background: #fff;
   height: 100px;
-  box-shadow: 0 3px 10px #eee;
   border-radius: 8px;
+
+  background-image: url(${({ image }) => image});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 `;
 
 export default LogoPlaceholder;

@@ -15,7 +15,7 @@ const Title = styled.h4`
 const Grid = styled.div`
   display: grid;
   gap: 25px;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 33.33% 33.33% 33.33%;
   margin: 0 auto;
 
   @media screen and (max-width: 768px) {
@@ -28,6 +28,11 @@ const PostImage = styled.div`
   padding-bottom: 60%;
   background-color: #f4f5f4;
   margin-bottom: 24px;
+
+  background-image: url(${({ image }) => image});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 const PostTitle = styled.h3`
@@ -51,29 +56,27 @@ const PostDescription = styled.div`
   }
 `;
 
-function Post() {
+function Post({ title, description, image, url }) {
   return (
-    <div>
-      <PostImage />
-      <PostTitle>Title Blog</PostTitle>
-      <PostDescription>
-        This is placeholder text for explaining to user about your company or
-        your services. This is placeholder text for explaining to user about
-        your company or your services.{' '}
-      </PostDescription>
-    </div>
+    <a href={url} target="_blank" rel="noreferrer">
+      <div>
+        <PostImage image={image} />
+        <PostTitle>{title}</PostTitle>
+        <PostDescription>{description}</PostDescription>
+      </div>
+    </a>
   );
 }
 
-function AcademyList() {
+function AcademyList({ title, cards }) {
   return (
     <SectionBox>
-      <Title>Academy</Title>
+      <Title>{title}</Title>
 
       <Grid>
-        <Post />
-        <Post />
-        <Post />
+        {cards.map((card) => (
+          <Post key={card.title} {...card} />
+        ))}
       </Grid>
     </SectionBox>
   );

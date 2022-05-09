@@ -20,53 +20,106 @@
           "sectionType": {
             "type": "string",
             "title": "Section Type",
-            "enum": ["feature-left", "feature-right"],
-            "enumNames": ["Feature Left", "Feature Right"]
+            "enum": [
+              "banner",
+              "feature-left",
+              "feature-right",
+              "logo-list",
+              "data-list",
+              "card-list"
+            ],
+            "enumNames": [
+              "Banner",
+              "Feature Left",
+              "Feature Right",
+              "Logo List",
+              "Data List",
+              "Card List"
+            ]
+          },
+          "menuName": {
+            "title": "Menu Name",
+            "type": "string"
           }
         },
         "dependencies": {
           "sectionType": {
             "oneOf": [
               {
-                "title": "Section",
-                "titleFormat": "accordion",
-                "required": ["background"],
+                "title": "Banner",
+                "properties": {
+                  "sectionType": {
+                    "enum": ["banner"]
+                  },
+                  "banner": {
+                    "title": "Banner",
+                    "titleFormat": "accordion",
+                    "type": "object",
+                    "required": ["title", "caption", "image"],
+                    "properties": {
+                      "title": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "caption": {
+                        "title": "Caption",
+                        "type": "string"
+                      },
+                      "image": {
+                        "title": "Image",
+                        "type": "string",
+                        "format": "imageUpload"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "title": "Feature Left",
                 "properties": {
                   "sectionType": {
                     "enum": ["feature-left"]
                   },
-                  "image": {
-                    "title": "Image",
-                    "type": "string",
-                    "format": "imageUpload"
-                  },
-                  "background": {
-                    "type": "string",
-                    "title": "Background Type",
-                    "default": "no-background",
-                    "enum": ["no-background", "1", "2", "3"],
-                    "enumNames": [
-                      "No Background",
-                      "Background-1",
-                      "Background-2",
-                      "Background-3"
-                    ]
-                  },
-                  "features": {
-                    "title": "Features",
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "required": ["title", "description"],
-                      "properties": {
-                        "title": {
-                          "type": "string",
-                          "title": "Title"
-                        },
-                        "description": {
-                          "type": "string",
-                          "title": "Short Description",
-                          "format": "textarea"
+                  "feature": {
+                    "title": "Config",
+                    "titleFormat": "accordion",
+                    "required": ["background"],
+                    "type": "object",
+                    "properties": {
+                      "image": {
+                        "title": "Image",
+                        "type": "string",
+                        "format": "imageUpload"
+                      },
+                      "background": {
+                        "type": "string",
+                        "title": "Background Type",
+                        "default": "no-background",
+                        "enum": ["no-background", "1", "2", "3"],
+                        "enumNames": [
+                          "No Background",
+                          "Background-1",
+                          "Background-2",
+                          "Background-3"
+                        ]
+                      },
+                      "features": {
+                        "title": "Features",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": ["title", "description"],
+                          "properties": {
+                            "title": {
+                              "type": "string",
+                              "title": "Title"
+                            },
+                            "description": {
+                              "type": "string",
+                              "title": "Short Description",
+                              "format": "textarea"
+                            }
+                          }
                         }
                       }
                     }
@@ -74,43 +127,200 @@
                 }
               },
               {
-                "required": ["background"],
+                "title": "Feature Right",
                 "properties": {
                   "sectionType": {
                     "enum": ["feature-right"]
                   },
-                  "image": {
-                    "title": "Image",
-                    "type": "string",
-                    "format": "imageUpload"
+                  "feature": {
+                    "title": "Config",
+                    "titleFormat": "accordion",
+                    "required": ["background"],
+                    "type": "object",
+                    "properties": {
+                      "image": {
+                        "title": "Image",
+                        "type": "string",
+                        "format": "imageUpload"
+                      },
+                      "background": {
+                        "type": "string",
+                        "title": "Background Type",
+                        "default": "no-background",
+                        "enum": ["no-background", "1", "2", "3"],
+                        "enumNames": [
+                          "No Background",
+                          "Background-1",
+                          "Background-2",
+                          "Background-3"
+                        ]
+                      },
+                      "features": {
+                        "title": "Features",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": ["title", "description"],
+                          "properties": {
+                            "title": {
+                              "type": "string",
+                              "title": "Title"
+                            },
+                            "description": {
+                              "type": "string",
+                              "title": "Short Description",
+                              "format": "textarea"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "title": "Logo List",
+                "properties": {
+                  "sectionType": {
+                    "enum": ["logo-list"]
                   },
-                  "background": {
-                    "type": "string",
-                    "title": "Background Type",
-                    "default": "no-background",
-                    "enum": ["no-background", "1", "2", "3"],
-                    "enumNames": [
-                      "No Background",
-                      "Background-1",
-                      "Background-2",
-                      "Background-3"
-                    ]
+                  "logoSection": {
+                    "title": "Config",
+                    "titleFormat": "accordion",
+                    "required": ["background", "title", "caption"],
+                    "properties": {
+                      "background": {
+                        "type": "string",
+                        "title": "Background Type",
+                        "default": "no-background",
+                        "enum": ["no-background", "1", "2", "3"],
+                        "enumNames": [
+                          "No Background",
+                          "Background-1",
+                          "Background-2",
+                          "Background-3"
+                        ]
+                      },
+                      "title": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "caption": {
+                        "title": "Caption",
+                        "type": "string"
+                      },
+                      "logos": {
+                        "title": "Logos",
+                        "type": "array",
+                        "items": {
+                          "title": "Logo",
+                          "type": "string",
+                          "format": "imageUpload"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "title": "Data List",
+                "properties": {
+                  "sectionType": {
+                    "enum": ["data-list"]
                   },
-                  "features": {
-                    "title": "Features",
-                    "type": "array",
-                    "items": {
-                      "type": "object",
-                      "required": ["title", "description"],
-                      "properties": {
-                        "title": {
-                          "type": "string",
-                          "title": "Title"
-                        },
-                        "description": {
-                          "type": "string",
-                          "title": "Short Description",
-                          "format": "textarea"
+                  "dataSection": {
+                    "title": "Config",
+                    "titleFormat": "accordion",
+                    "required": ["background", "title", "caption"],
+                    "properties": {
+                      "background": {
+                        "type": "string",
+                        "title": "Background Type",
+                        "default": "no-background",
+                        "enum": ["no-background", "1", "2", "3"],
+                        "enumNames": [
+                          "No Background",
+                          "Background-1",
+                          "Background-2",
+                          "Background-3"
+                        ]
+                      },
+                      "title": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "caption": {
+                        "title": "Caption",
+                        "type": "string"
+                      },
+                      "datas": {
+                        "title": "Data List",
+                        "type": "array",
+                        "default": [],
+                        "items": {
+                          "title": "Logo",
+                          "type": "object",
+                          "required": ["number", "name"],
+                          "properties": {
+                            "number": {
+                              "title": "Number",
+                              "type": "string"
+                            },
+                            "name": {
+                              "title": "Name",
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "title": "Card List",
+                "properties": {
+                  "sectionType": {
+                    "enum": ["card-list"]
+                  },
+                  "cardSection": {
+                    "title": "Config",
+                    "titleFormat": "accordion",
+                    "required": ["title"],
+                    "properties": {
+                      "title": {
+                        "title": "Title",
+                        "type": "string"
+                      },
+                      "cards": {
+                        "title": "Card List",
+                        "type": "array",
+                        "default": [],
+                        "items": {
+                          "title": "Card",
+                          "titleFormat": "accordion",
+                          "type": "object",
+                          "required": ["title", "description", "image"],
+                          "properties": {
+                            "image": {
+                              "title": "Image",
+                              "type": "string",
+                              "format": "imageUpload"
+                            },
+                            "url": {
+                              "title": "URL",
+                              "type": "string"
+                            },
+                            "title": {
+                              "title": "Title",
+                              "type": "string"
+                            },
+                            "description": {
+                              "title": "Description",
+                              "type": "string",
+                              "format": "textarea"
+                            }
+                          }
                         }
                       }
                     }
