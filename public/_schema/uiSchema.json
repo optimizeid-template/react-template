@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "items": {
+      "banner": {
+        "image": { "ui:options": { "aspect": 1.7 } }
+      },
+      "logoSection": {
+        "logos": {
+          "ui:options": { "column": 2 },
+          "items": { "ui:options": { "aspect": 1.7 } }
+        }
+      },
+      "cardSection": {
+        "cards": {
+          "items": {
+            "image": { "ui:options": { "aspect": 1.7 } }
+          }
+        }
+      }
+    }
+  }
+}
