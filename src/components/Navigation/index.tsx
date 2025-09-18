@@ -1,94 +1,95 @@
-import React, { useEffect, useState } from "react";
-import { FaBars } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { useConfig } from "../../contexts/config-context";
-import Container from "../Container";
+import React, { useEffect, useState } from 'react'
+import { FaBars } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { useConfig } from '../../contexts/config-context'
+import Container from '../Container'
 
 interface MappedMenu {
-  name?: string;
-  index: number;
+  name?: string
+  index: number
 }
 
 interface Menu {
-  label: string;
-  url: string;
+  label: string
+  url: string
 }
 
 // Helper function to get menus from template config
 function getMenusFromConfig(templateConfig: any): Menu[] {
   if (!templateConfig || !templateConfig.sections) {
-    return [{ label: "Home", url: "/" }];
+    return [{ label: 'Home', url: '/' }]
   }
 
   const mappedMenus: MappedMenu[] = templateConfig.sections.map(
     (section: any, index: number) => ({
       name: section.menuName,
       index,
-    })
-  );
-  const filteredMenus = mappedMenus.filter((menu: MappedMenu) => !!menu.name);
+    }),
+  )
+  const filteredMenus = mappedMenus.filter((menu: MappedMenu) => !!menu.name)
 
   return [
     {
-      label: "Home",
-      url: "/",
+      label: 'Home',
+      url: '/',
     },
   ].concat(
     filteredMenus.map((menu: MappedMenu) => ({
-      label: menu.name || "",
+      label: menu.name || '',
       url: `#section-${menu.index}`,
-    }))
-  );
+    })),
+  )
 }
 
 function MobileMenu() {
-  const [showMenu, setShowMenu] = useState(false);
-  const [menus, setMenus] = useState<Menu[]>([{ label: "Home", url: "/" }]);
-  const templateConfig = useConfig().templateConfig;
+  const [showMenu, setShowMenu] = useState(false)
+  const [menus, setMenus] = useState<Menu[]>([{ label: 'Home', url: '/' }])
+  const templateConfig = useConfig().templateConfig
 
   useEffect(() => {
     // Update menus when template config is available
     const updateMenus = () => {
-      setMenus(getMenusFromConfig(templateConfig));
-    };
+      setMenus(getMenusFromConfig(templateConfig))
+    }
 
     // Check if config is already loaded
     if (templateConfig) {
-      updateMenus();
+      updateMenus()
     }
 
     // Listen for template config loaded event
-    window.addEventListener("templateConfigLoaded", updateMenus);
+    window.addEventListener('templateConfigLoaded', updateMenus)
 
     return () => {
-      window.removeEventListener("templateConfigLoaded", updateMenus);
-    };
-  }, []);
+      window.removeEventListener('templateConfigLoaded', updateMenus)
+    }
+  }, [])
 
   const toggleMenu = () => {
-    setShowMenu((prev) => !prev);
-  };
+    setShowMenu(prev => !prev)
+  }
 
   const menuClick = (url: string) => {
-    if (url.startsWith("#")) {
-      const element = document.querySelector(url);
+    if (url.startsWith('#')) {
+      const element = document.querySelector(url)
       if (element) {
         window.scrollTo({
           top: element.getBoundingClientRect().top + window.pageYOffset - 80,
-          behavior: "smooth",
-        });
+          behavior: 'smooth',
+        })
       }
-    } else {
-      const templateElement = document.querySelector("#template");
+    }
+    else {
+      const templateElement = document.querySelector('#template')
       if (templateElement) {
         templateElement.scrollIntoView({
-          behavior: "smooth",
-        });
+          behavior: 'smooth',
+        })
       }
     }
 
-    toggleMenu();
-  };
+    toggleMenu()
+  }
 
   return (
     <div className="relative lg:hidden">
@@ -100,9 +101,9 @@ function MobileMenu() {
         <FaBars />
       </button>
       <ul
-        className={`${showMenu ? "block" : "hidden"} absolute top-full right-0 p-0 m-0 list-none bg-white border border-gray-200`}
+        className={`${showMenu ? 'block' : 'hidden'} absolute top-full right-0 p-0 m-0 list-none bg-white border border-gray-200`}
       >
-        {menus.map((menu) => (
+        {menus.map(menu => (
           <li
             key={menu.label}
             onClick={() => menuClick(menu.url)}
@@ -113,53 +114,54 @@ function MobileMenu() {
         ))}
       </ul>
     </div>
-  );
+  )
 }
 
 function DesktopMenu() {
-  const [menus, setMenus] = useState<Menu[]>([{ label: "Home", url: "/" }]);
-  const templateConfig = useConfig().templateConfig;
+  const [menus, setMenus] = useState<Menu[]>([{ label: 'Home', url: '/' }])
+  const templateConfig = useConfig().templateConfig
 
   useEffect(() => {
     // Update menus when template config is available
     const updateMenus = () => {
-      setMenus(getMenusFromConfig(templateConfig));
-    };
+      setMenus(getMenusFromConfig(templateConfig))
+    }
 
     // Check if config is already loaded
     if (templateConfig) {
-      updateMenus();
+      updateMenus()
     }
 
     // Listen for template config loaded event
-    window.addEventListener("templateConfigLoaded", updateMenus);
+    window.addEventListener('templateConfigLoaded', updateMenus)
 
     return () => {
-      window.removeEventListener("templateConfigLoaded", updateMenus);
-    };
-  }, []);
+      window.removeEventListener('templateConfigLoaded', updateMenus)
+    }
+  }, [])
   const menuClick = (url: string) => {
-    if (url.startsWith("#")) {
-      const element = document.querySelector(url);
+    if (url.startsWith('#')) {
+      const element = document.querySelector(url)
       if (element) {
         window.scrollTo({
           top: element.getBoundingClientRect().top + window.pageYOffset - 90,
-          behavior: "smooth",
-        });
-      }
-    } else {
-      const templateElement = document.querySelector("#template");
-      if (templateElement) {
-        templateElement.scrollIntoView({
-          behavior: "smooth",
-        });
+          behavior: 'smooth',
+        })
       }
     }
-  };
+    else {
+      const templateElement = document.querySelector('#template')
+      if (templateElement) {
+        templateElement.scrollIntoView({
+          behavior: 'smooth',
+        })
+      }
+    }
+  }
 
   return (
     <ul className="list-none hidden lg:block">
-      {menus.map((menu) => (
+      {menus.map(menu => (
         <li
           key={menu.label}
           onClick={() => menuClick(menu.url)}
@@ -169,11 +171,11 @@ function DesktopMenu() {
         </li>
       ))}
     </ul>
-  );
+  )
 }
 
 function Navigation() {
-  const templateConfig = useConfig().templateConfig;
+  const templateConfig = useConfig().templateConfig
 
   return (
     <nav className="sticky top-0 z-[2] bg-white/70 backdrop-blur-sm backdrop-saturate-[180%] md:py-2.5">
@@ -189,7 +191,7 @@ function Navigation() {
         </div>
       </Container>
     </nav>
-  );
+  )
 }
 
-export default Navigation;
+export default Navigation

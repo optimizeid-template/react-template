@@ -1,10 +1,10 @@
-import { createContext, useContext } from "react";
+import { createContext, use } from 'react'
 
 export const configContext = createContext<{
-  templateConfig: Record<string, any>;
-  setTemplateConfig?: (config: Record<string, any>) => void;
-}>({ templateConfig: window.templateConfig });
+  templateConfig: Record<string, any>
+  setTemplateConfig?: (config: Record<string, any>) => void
+}>({ templateConfig: window.templateConfig })
 
-export const useConfig = () => useContext(configContext);
+export const useConfig = () => use(configContext)
 
-export const ConfigProvider = configContext.Provider;
+export const ConfigProvider = configContext.Provider

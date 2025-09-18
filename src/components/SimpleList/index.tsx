@@ -1,11 +1,11 @@
-import React from 'react';
-import SectionBox from '../SectionBox';
+import React from 'react'
+import SectionBox from '../SectionBox'
 
 interface LogoListProps {
-  title: string;
-  caption: string;
-  backgroundGradient?: number;
-  children: React.ReactNode;
+  title: string
+  caption: string
+  backgroundGradient?: number
+  children: React.ReactNode
 }
 
 function LogoList({ title, caption, backgroundGradient, children }: LogoListProps) {
@@ -22,7 +22,7 @@ function LogoList({ title, caption, backgroundGradient, children }: LogoListProp
         {children}
       </div>
     </SectionBox>
-  );
+  )
 }
 
-export default LogoList;
+export default LogoList

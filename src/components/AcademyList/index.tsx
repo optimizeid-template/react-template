@@ -1,23 +1,23 @@
-import React from 'react';
-import SectionBox from '../SectionBox';
+import React from 'react'
+import SectionBox from '../SectionBox'
 
 interface PostProps {
-  title: string;
-  description: string;
-  image: string;
-  url: string;
+  title: string
+  description: string
+  image: string
+  url: string
 }
 
 interface AcademyListProps {
-  title: string;
-  cards: PostProps[];
+  title: string
+  cards: PostProps[]
 }
 
 function Post({ title, description, image, url }: PostProps) {
   return (
     <a href={url} target="_blank" rel="noreferrer">
       <div>
-        <div 
+        <div
           className="w-full pb-[60%] bg-[#f4f5f4] mb-6 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${image})` }}
         />
@@ -29,7 +29,7 @@ function Post({ title, description, image, url }: PostProps) {
         </div>
       </div>
     </a>
-  );
+  )
 }
 
 function AcademyList({ title, cards }: AcademyListProps) {
@@ -40,12 +40,12 @@ function AcademyList({ title, cards }: AcademyListProps) {
       </h4>
 
       <div className="grid gap-[25px] grid-cols-3 mx-auto md:block">
-        {cards.map((card) => (
+        {cards.map(card => (
           <Post key={card.title} {...card} />
         ))}
       </div>
     </SectionBox>
-  );
+  )
 }
 
-export default AcademyList;
+export default AcademyList

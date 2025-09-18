@@ -1,10 +1,10 @@
-import React from 'react';
-import Container from '../Container';
+import React from 'react'
+import Container from '../Container'
 
 interface HomeCoverProps {
-  title: string;
-  caption: string;
-  image: string;
+  title: string
+  caption: string
+  image: string
 }
 
 function HomeCover({ title, caption, image }: HomeCoverProps) {
@@ -18,13 +18,13 @@ function HomeCover({ title, caption, image }: HomeCoverProps) {
         <div className="font-semibold text-base leading-[22px] text-center text-[#737b7d]">
           {caption}
         </div>
-        <div 
+        <div
           className="pb-[50%] bg-[#f4f5f4] rounded-3xl mt-[10%] bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${image})` }}
         />
       </Container>
     </div>
-  );
+  )
 }
 
-export default HomeCover;
+export default HomeCover

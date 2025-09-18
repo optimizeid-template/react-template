@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
 interface DataPlaceholderProps {
   data: {
-    number: string | number;
-    name: string;
-  };
+    number: string | number
+    name: string
+  }
 }
 
 function DataPlaceholder({ data }: DataPlaceholderProps) {
@@ -17,7 +17,7 @@ function DataPlaceholder({ data }: DataPlaceholderProps) {
         {data.name}
       </div>
     </div>
-  );
+  )
 }
 
-export default DataPlaceholder;
+export default DataPlaceholder
