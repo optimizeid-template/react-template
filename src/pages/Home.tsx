@@ -5,9 +5,10 @@ import FeatureSection from '../components/FeatureSection';
 import HomeCover from '../components/HomeCover';
 import LogoPlaceholder from '../components/LogoPlaceholder';
 import SimpleList from '../components/SimpleList';
+import { useConfig } from '../contexts/config-context';
 
 function Home() {
-  const { sections } = window.templateConfig;
+  const { sections } = useConfig().templateConfig;
 
   return (
     <>
