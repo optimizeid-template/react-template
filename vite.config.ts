@@ -14,7 +14,8 @@ export default defineConfig({
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
-      'Access-Control-Allow-Headers': 'X-Requested-With, content-type, Authorization',
+      'Access-Control-Allow-Headers':
+        'X-Requested-With, content-type, Authorization',
     },
     fs: {
       // Allow serving files from one level up to the project root
@@ -28,6 +29,15 @@ export default defineConfig({
     target: 'es2022',
     rollupOptions: {
       output: {
+        // Custom filenames for main entry files
+        entryFileNames: 'template.js',
+        chunkFileNames: '[name].js',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name && assetInfo.name.endsWith('.css')) {
+            return 'template.css'
+          }
+          return '[name].[ext]'
+        },
         // Generate separate chunks for better caching
         manualChunks: {
           vendor: ['react', 'react-dom'],
